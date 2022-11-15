@@ -19,7 +19,7 @@
             </div>
             <div>
                 <br>
-                <button type="submit" class="btn" onclick="button()" style="width : 120px">
+                <button type="submit" class="btn" onclick="location.href='http://localhost:8080/team13/signup.php'" style="width : 120px">
                     Sign Up
                 </button>
                 <button type="submit" class="btn" onclick="button()" style="width : 120px">
