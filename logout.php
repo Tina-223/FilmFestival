@@ -2,7 +2,8 @@
 session_start();
 session_destroy();
 ?>
+<meta http-equiv="refresh" content="0;url=index.php" />
 <script>
     alert("You've been logged out");
-    location.replace('index.php');
+    location.replace('home.php');
 </script>
