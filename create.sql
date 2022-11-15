@@ -3,7 +3,7 @@
 	name varchar(255),
 	country varchar(255),
 	primary key (id)
-);
+) default character set utf8;
 
 create table academy_best_award (
 	id bigint auto_increment,
@@ -12,25 +12,7 @@ create table academy_best_award (
 	film_id bigint,	
 	film_festival_id bigint,
 	primary key (id)
-);
-
-create table venice_best_award (
-	id bigint auto_increment,
-	year int,
-	round int,
-	film_id bigint,	
-	film_festival_id bigint,
-	primary key (id)
-);
-
-create table berlin_best_award (
-	id bigint auto_increment,
-	year int,
-	round int,
-	film_id bigint,	
-	film_festival_id bigint,
-	primary key (id)
-);
+) default character set utf8;
 
 create table cannes_best_award (
 	id bigint auto_increment,
@@ -39,14 +21,32 @@ create table cannes_best_award (
 	film_id bigint,	
 	film_festival_id bigint,
 	primary key (id)
-);
+) default character set utf8;
+
+create table berlin_best_award (
+	id bigint auto_increment,
+	year int,
+	round int,
+	film_id bigint,	
+	film_festival_id bigint,
+	primary key (id)
+) default character set utf8;
+
+create table venice_best_award (
+	id bigint auto_increment,
+	year int,
+	round int,
+	film_id bigint,	
+	film_festival_id bigint,
+	primary key (id)
+) default character set utf8;
 
 create table user (
 	id bigint auto_increment,
 	username varchar(255),
 	password varchar(255),
 	primary key (id)
-);
+) default character set utf8;
 
 create table review_academy (
 	id bigint auto_increment,
@@ -55,7 +55,7 @@ create table review_academy (
 	academy_award_id bigint,
 	user_id bigint,
 	primary key (id)
-);
+) default character set utf8;
 
 create table review_venice (
 	id bigint auto_increment,
@@ -64,7 +64,7 @@ create table review_venice (
 	venice_award_id bigint,
 	user_id bigint,
 	primary key (id)
-);
+) default character set utf8;
 
 create table review_berlin (
 	id bigint auto_increment,
@@ -73,7 +73,7 @@ create table review_berlin (
 	berlin_award_id bigint,
 	user_id bigint,
 	primary key (id)
-);
+) default character set utf8;
 
 create table review_cannes (
 	id bigint auto_increment,
@@ -82,31 +82,36 @@ create table review_cannes (
 	cannes_award_id bigint,
 	user_id bigint,
 	primary key (id)
-);
+) default character set utf8;
 
 create table film (
 	id bigint auto_increment,
 	name varchar(255),
-	grade int,
-	gender char(1),
 	director_id bigint,	
 	primary key (id)
-);
+) default character set utf8;
+
+create table film_gender (
+	id bigint auto_increment,
+	gender char(1),
+	grade int,
+	film_id bigint,
+	primary key (id)
+) default character set utf8;
 
 create table director (
 	id bigint auto_increment,
 	name varchar(255),
 	nationality varchar(255),
 	primary key (ID)
-);
+) default character set utf8;
 
 create table film_hit (
 	id bigint auto_increment,
 	sales bigint,
-	spectator_num int,
 	film_id bigint,	
 	primary key (id)
-);
+) default character set utf8;
 
 alter table academy_best_award add foreign key(film_id) references film(id) on delete cascade;
 alter table academy_best_award add foreign key(film_festival_id) references film_festival(id) on delete cascade;
@@ -136,22 +141,4 @@ alter table film add foreign key(director_id) references director(id) on delete 
 
 alter table film_hit add foreign key(film_id) references film(id) on delete cascade;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+alter table film_gender add foreign key(film_id) references film(id) on delete cascade;

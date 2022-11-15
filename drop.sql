@@ -14,6 +14,8 @@ drop table film_festival;
 
 drop table film_hit;
 
+drop table film_gender;
+
 drop table film;
 
 drop table director;
