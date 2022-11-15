@@ -7,15 +7,15 @@
     <?php
     session_start();
     $host = 'localhost';
-    $user = '';
-    $pw = '';
-    $db_name = '';
+    $user = 'team13';
+    $pw = 'team13';
+    $db_name = 'team13';
     $mysqli = new mysqli($host, $user, $pw, $db_name); //db 연결
     //login.php에서 입력받은 id, password
     $username = $_POST['id'];
     $userpass = $_POST['pw'];
       
-    $q = "SELECT * FROM member WHERE id = '$username' AND pass = '$userpass'";
+    $q = "SELECT * FROM user WHERE id = '$username' AND password = '$userpass'";
     $result = $mysqli->query($q);
     $row = $result->fetch_array(MYSQLI_ASSOC);
 
