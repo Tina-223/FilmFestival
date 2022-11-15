@@ -5,7 +5,7 @@
     <title>login</title>
 </head>
 <body>
-    <form method="post" action="check_login.php" class="loginForm">
+    <form method="post" action="check_login.php">
         <div id="content">
             <br> <br> <br> <br>
             <h2>Welcome</h2>

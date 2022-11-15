@@ -6,7 +6,7 @@
 </head>
 <body>
     <div class="btn">
-        <button class="loginbtn"  onclick="location.href='http://localhost:8080/team13/login.php'">login</button>
+        <button class="loginbtn"  onclick="location.href='http://localhost:8080/team13/index.php'">login</button>
     </div>
     <div class="wrapper">
         <section class="content">
