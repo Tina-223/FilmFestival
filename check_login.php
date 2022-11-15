@@ -15,14 +15,13 @@
     $username = $_POST['id'];
     $userpass = $_POST['pw'];
       
-    $q = "SELECT * FROM user WHERE id = '$username' AND password = '$userpass'";
+    $q = "SELECT * FROM user WHERE username = '$username' AND password = '$userpass'";
     $result = $mysqli->query($q);
     $row = $result->fetch_array(MYSQLI_ASSOC);
 
     // 결과가 존재하면 세션 생성
     if ($row != null) {
-        $_SESSION['username'] = $row['id'];
-        $_SESSION['name'] = $row['name'];
+        $_SESSION['username'] = $row['username'];
         echo "<script>location.replace('index.php');</script>";
         exit;
     }
