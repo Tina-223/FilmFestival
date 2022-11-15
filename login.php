@@ -12,17 +12,17 @@
             <p>Sign in to edit ratings</p>
             <br>
             <div class="idForm">
-                <input type="text" name="id" class="id" size="30" placeholder="Username">
+                <input type="text" name="id" size="30" placeholder="Username">
             </div>
             <div class="passForm">
-                <input type="password" name="pw" class="pw" size="30" placeholder="Password">
+                <input type="password" name="pw" size="30" placeholder="Password">
             </div>
             <div>
                 <br>
-                <button type="submit" class="btn" onclick="location.href='http://localhost:8080/team13/signup.php'" style="width : 120px">
+                <button type="submit" name="btnUp" style="width : 120px">
                     Sign Up
                 </button>
-                <button type="submit" class="btn" onclick="button()" style="width : 120px">
+                <button type="submit" name="btnIn" style="width : 120px">
                     Sign In
                 </button>
             </div>
