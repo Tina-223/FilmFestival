@@ -2,7 +2,7 @@
 header('Content-Type: text/html; charset=UTF-8');
 session_start();
 if(!isset($_SESSION['user'])) {
-    echo "<script>location.replace('home.php');</script>";            
+    echo "<script>location.replace('login.php');</script>";            
 }
 
 else {
