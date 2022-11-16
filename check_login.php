@@ -12,7 +12,7 @@
     $pw = 'team13';
     $db_name = 'team13';
     $mysqli = new mysqli($host, $user, $pw, $db_name); //db 연결
-    //login.php에서 입력받은 id, password
+    //login.php에서 입력받은 id, pw
     $username = $_POST['id'];
     $userpass = $_POST['pw'];
     

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
     <meta charset="utf-8">
     <title>home</title>
@@ -73,5 +73,3 @@
     </style>
 </body>
 </html>
-
-
