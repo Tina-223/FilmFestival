@@ -8,7 +8,7 @@ $user = 'team13';
 $pw = 'team13';
 $db_name = 'team13';
 
-$mysqli = new mysqli($host, $user, $pw, $db_name, '3306');
+$mysqli = new mysqli($host, $user, $pw, $db_name);
 //$mysqli = new mysqli($host, $user, $pw, $db_name, '3307');
 
 if(mysqli_connect_errno()){
