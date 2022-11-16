@@ -5,6 +5,7 @@
 </head>
 <body>
     <?php
+    header('Content-Type: text/html; charset=UTF-8');
     session_start();
     $host = 'localhost';
     $user = 'team13';
