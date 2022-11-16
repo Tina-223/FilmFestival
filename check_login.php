@@ -23,7 +23,7 @@
 
         // 결과가 존재하면 세션 생성
         if ($result != null) {
-            $_SESSION['username'] = '$username';
+            $_SESSION['user'] = '$username';
             echo "<script>location.replace('index.php');</script>";
             exit;
         }

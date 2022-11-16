@@ -1,10 +1,11 @@
 <?php
 header('Content-Type: text/html; charset=UTF-8');
 session_start();
+// 로그인 안되어있을 때
 if(!isset($_SESSION['user'])) {
     echo "<script>location.replace('login.php');</script>";            
 }
-
+// 로그인 되어있을때
 else {
     $id = $_SESSION['user'];
 } 
