@@ -27,6 +27,7 @@ else{
 	<title>Films by Countries</title>
 </head>
 <body>
+	<button class="Back" onclick="location.href='http://localhost:8080/team13/country_select.php'">Back</button>
 	<h1>Search results for films by country</h1>
 	<?php
 		echo "Country ".$ctr." / Sort By ".$sort;
