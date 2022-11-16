@@ -11,7 +11,6 @@ else {
 } 
 ?>
 <body>
-    <p><?php echo "Hi, $id";?></p>
     <div class="btn">
         <button class="logoutbtn" onclick="location.href='http://localhost:8080/team13/logout.php'">logout</button>
     </div>
