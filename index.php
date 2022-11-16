@@ -1,15 +1,16 @@
 <?php
 header('Content-Type: text/html; charset=UTF-8');
 session_start();
-if(!isset($_SESSION['username'])) {
-    echo "<script>location.replace('login.php');</script>";            
+if(!isset($_SESSION['user'])) {
+    echo "<script>location.replace('home.php');</script>";            
 }
 
 else {
-    $username = $_SESSION['username'];
+    $id = $_SESSION['user'];
 } 
 ?>
 <body>
+    <p><?php echo "Hi, $id";?></p>
     <div class="btn">
         <button class="logoutbtn" onclick="location.href='http://localhost:8080/team13/logout.php'">logout</button>
     </div>

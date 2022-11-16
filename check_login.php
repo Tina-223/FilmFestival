@@ -42,7 +42,7 @@
 
         // 결과가 존재하면 세션 생성
         if ($row != null) {
-            $_SESSION['username'] = $row['username'];
+            $_SESSION['user'] = $row['id'];
             echo "<script>location.replace('index.php');</script>";
             exit;
         }
