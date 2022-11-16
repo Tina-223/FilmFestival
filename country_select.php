@@ -4,7 +4,7 @@
 	<title>Films by Countries</title>
 </head>
 <body>
-	<button class="Home" onclick="location.href='http://localhost/team13/home.php'">Home</button>
+	<button class="Home" onclick="location.href='http://localhost/team13/homebtn.php'">Home</button>
 	<h1>Select the country you would like to know more about movie information</h1>
 	<form action='country_result.php' method="post">
 		Country:
