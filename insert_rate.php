@@ -35,21 +35,31 @@
             else {
                 $review = "-";
             }
-            $q = "INSERT INTO review_".$choice." (grade, one_line_review, ".$choice."_award_id, user_id) values ($grade, '$review', $awardid, $userid)";
-            $res = $mysqli->query($q);
 
-            // insert문 실행 시
-            if ($res === TRUE) {
-                echo "<table border cols = 2>\n";
-                echo "<tr><td> ratings </td><td> revies </td></tr>\n";
-                while($array = mysqli_fetch_array($res, MYSQLI_ASSOC)){
-                    $r_grade = $array['grade'];				
-                    $r_review = $array['one_line_review'];
-                    echo "<tr><td>".$r_grade."</td><td>".$r_review."</td></tr>\n";
+            mysqli_begin_transaction($mysqli);
+
+            try {
+                $q = "INSERT INTO review_".$choice." (grade, one_line_review, ".$choice."_award_id, user_id) values ($grade, '$review', $awardid, $userid)";
+                $res = mysqli_query($mysqli, $q);
+
+                // insert문 실행 시
+                if ($res === TRUE) {
+                    echo "<table border cols = 2>\n";
+                    echo "<tr><td> ratings </td><td> revies </td></tr>\n";
+                    while($array = mysqli_fetch_array($res, MYSQLI_ASSOC)){
+                        $r_grade = $array['grade'];				
+                        $r_review = $array['one_line_review'];
+                        echo "<tr><td>".$r_grade."</td><td>".$r_review."</td></tr>\n";
+                    }
+                }else{
+                    printf("Could not retrieve records: %s\n", mysqli_error($mysqli));
                 }
-            }else{
-                printf("Could not retrieve records: %s\n", mysqli_error($mysqli));
+            } catch (mysqli_sql_exception $exception) {
+                mysqli_rollback($mysqli);
+
+                throw $exception;
             }
+            
         }
     }
 
