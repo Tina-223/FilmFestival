@@ -13,7 +13,7 @@
             <div class="columns">
                 <main class="main">Films Based on Directors</main>
                 <aside class="sidebar-first">Award-Winning Films</aside>
-                <aside class="sidebar-second">Films Based on Countries</aside>
+                <aside class="sidebar-second" onclick="location.href='http://localhost:8080/team13/test.html'">Films Based on Countries</aside>
             </div>
         </section>
     </div>
