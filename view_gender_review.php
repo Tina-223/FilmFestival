@@ -36,6 +36,11 @@ if(isset($_POST['search']))
                 <input type="number" name="rating" min="1" max="10" placeholder="10">
                 <input type='submit' value='수정하기'>
     </form>
+    <form action='delete_review_academy.php' method="post">
+    평점 삭제  
+                <input type="text" name="userID" placeholder="사용자 ID 입력">
+                <input type='submit' value='삭제하기'>
+    </form>
     <table>
         <th>Result</th>
         <tread>
