@@ -3,9 +3,9 @@ header('Content-Type: text/html; charset=UTF-8');
 session_start();
 $host = 'localhost';
 $user = 'team13';
-$pw = 'team13';
+$pw = 'team30';
 $db_name = 'team13';
-$mysqli = new mysqli($host, $user, $pw, $db_name); //db 연결
+$mysqli = new mysqli($host, $user, $pw, $db_name, '3307'); //db 연결
 if(isset($_POST['search']))
 { 
     $film_name=$_POST['fname']; #영화이름
@@ -29,6 +29,13 @@ if(isset($_POST['search']))
       }
     </style>
 <body>
+    </br>
+    <form action='update_review.php' method="post">
+    평점 수정  
+                <input type="text" name="userID" placeholder="사용자 ID 입력">
+                <input type="number" name="rating" min="1" max="10" placeholder="10">
+                <input type='submit' value='수정하기'>
+    </form>
     <table>
         <th>Result</th>
         <tread>
@@ -36,6 +43,7 @@ if(isset($_POST['search']))
                 <th>영화제목</th>
                 <th>성별</th>
                 <th>평점</th>
+                <th>사용자ID</th>
         </tr>
     </tread>
     <tbody>
@@ -62,13 +70,14 @@ if($res1){
 
 
 if($award_name=='academy'){
-    $sql2="SELECT * FROM review_academy";
+    $sql2="SELECT * FROM review_academy, user";
     $res2= mysqli_query($mysqli,$sql2);
     if($res2){
         while($newArray = mysqli_fetch_array($res2,MYSQLI_ASSOC)){
         $gender2=$newArray['gender'];
         $grade2=$newArray['grade'];
-            echo  "<tr><td>$film_name</td><td>".$gender2."</td><td>".$grade2.'</td></tr>';         
+        $userid=$newArray['user_id'];
+            echo  "<tr><td>$film_name</td><td>".$gender2."</td><td>".$grade2."</td><td>".$userid."</td></tr>";         
      }
     }
 }else{
