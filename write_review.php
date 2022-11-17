@@ -11,9 +11,8 @@ if(isset($_POST['submit_btn']))
 {   $choice=$_POST['choice']; #영화제 종류
     $film_name=$_POST['fname']; #영화이름
     $grade=$_POST['rating']; #평점
-    $review=$_POST['review']; #한줄평
     echo "<".$film_name.">"."에 대한 리뷰가 등록되었습니다.</br>";
-    echo "평점 :".$grade." 한줄평: ".$review;
+    echo "평점 :".$grade;
 }
 
 $q = "SELECT * from film";

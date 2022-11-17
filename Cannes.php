@@ -41,7 +41,6 @@ else{
                   <input type="hidden" name="choice" value="cannes">
                   <input type="text" name="fname" placeholder="영화제목 입력">
                   <input type="number" name="rating" min="1" max="10" placeholder="10">
-                  <input type="text" name="review" placeholder="한줄평">
                   <input type="submit" name="submit_btn" value="작성하기"></form>
       </tr>
       <tr>
