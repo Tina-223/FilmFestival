@@ -51,7 +51,7 @@ create table user (
 create table review_academy (
 	id bigint auto_increment,
 	grade int,
-	one_line_review varchar(1000),
+	gender char(1),
 	academy_award_id bigint,
 	user_id bigint,
 	primary key (id)
@@ -60,7 +60,7 @@ create table review_academy (
 create table review_venice (
 	id bigint auto_increment,
 	grade int,
-	one_line_review varchar(1000),
+	gender char(1),
 	venice_award_id bigint,
 	user_id bigint,
 	primary key (id)
@@ -69,7 +69,7 @@ create table review_venice (
 create table review_berlin (
 	id bigint auto_increment,
 	grade int,
-	one_line_review varchar(1000),
+	gender char(1),
 	berlin_award_id bigint,
 	user_id bigint,
 	primary key (id)
@@ -78,7 +78,7 @@ create table review_berlin (
 create table review_cannes (
 	id bigint auto_increment,
 	grade int,
-	one_line_review varchar(1000),
+	gender char(1),
 	cannes_award_id bigint,
 	user_id bigint,
 	primary key (id)

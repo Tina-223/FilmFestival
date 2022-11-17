@@ -35,8 +35,9 @@ $db_name = 'team13';
     </tread>
     <tbody>
     <form action="view_gender_review.php" METHOD='post'>
-                        <input type="text" name="fname" placeholder="영화제목 입력">
-                        <input type="submit" name="search" value="검색하기"></form>
+        <input type="text" name="award_name" placeholder="영화제 입력 ex)academy">
+        <input type="text" name="fname" placeholder="영화제목 입력">
+        <input type="submit" name="search" value="검색하기"></form>
            
     <?php
         $mysqli = new mysqli($host, $user, $pw, $db_name); //db 연결
@@ -47,7 +48,7 @@ $db_name = 'team13';
         else{
         }
         $sql="SELECT * FROM film_gender
-        JOIN film ON film_gender.film_id=film.id";
+        LEFT JOIN film ON film_gender.film_id=film.id";
         $res = mysqli_query($mysqli,$sql);
         if($res){
             while($newArray = mysqli_fetch_array($res,MYSQLI_ASSOC)){
