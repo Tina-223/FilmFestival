@@ -30,7 +30,7 @@ if(isset($_POST['search']))
     </style>
 <body>
     </br>
-    <form action='update_review.php' method="post">
+    <form action='update_review_academy.php' method="post">
     평점 수정  
                 <input type="text" name="userID" placeholder="사용자 ID 입력">
                 <input type="number" name="rating" min="1" max="10" placeholder="10">
