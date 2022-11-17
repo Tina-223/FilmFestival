@@ -35,6 +35,9 @@ $db_name = 'team13';
                 <input type="number" name="rating" min="1" max="10" placeholder="10">
                 <input type="text" name="gender" placeholder="성별 입력 ex)F or M">
                 <input type="submit" name="submit_btn" value="작성하기"></form>
+            <form action= "film_gender_grade.php" METHOD="post">
+                <input type="submit" name="grade_file" value="영화 전체 평점 확인하기">
+
             </tr>
             <tr>
             <th>년도</th>
