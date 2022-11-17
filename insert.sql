@@ -481,3 +481,19 @@ insert into venice_best_award(year, round, film_id, film_festival_id) values(201
 insert into venice_best_award(year, round, film_id, film_festival_id) values(2020, 77, 12, 4);
 insert into venice_best_award(year, round, film_id, film_festival_id) values(2021, 78, 78, 4);
 insert into venice_best_award(year, round, film_id, film_festival_id) values(2022, 79, 79, 4);
+
+insert into user(username, password) values('lana', '1234');
+insert into user(username, password) values('jane', '1234');
+insert into user(username, password) values('jack', '1234');
+insert into user(username, password) values('june', '1234');
+insert into user(username, password) values('kate', '1234');
+insert into user(username, password) values('laly', '1234');
+
+insert into review_academy(grade, gender, academy_award_id, user_id) values(8, 'F', 1, 1);
+insert into review_academy(grade, gender, academy_award_id, user_id) values(7, 'F', 1, 2);
+insert into review_academy(grade, gender, academy_award_id, user_id) values(6, 'M', 1, 3);
+insert into review_academy(grade, gender, academy_award_id, user_id) values(9, 'M', 1, 4);
+insert into review_academy(grade, gender, academy_award_id, user_id) values(8, 'F', 1, 5);
+insert into review_academy(grade, gender, academy_award_id, user_id) values(8, 'F', 1, 6);
+insert into review_academy(grade, gender, academy_award_id, user_id) values(6, 'F', 1, 7);
+insert into review_academy(grade, gender, academy_award_id, user_id) values(9, 'M', 1, 8);
