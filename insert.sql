@@ -481,6 +481,3 @@ insert into venice_best_award(year, round, film_id, film_festival_id) values(201
 insert into venice_best_award(year, round, film_id, film_festival_id) values(2020, 77, 12, 4);
 insert into venice_best_award(year, round, film_id, film_festival_id) values(2021, 78, 78, 4);
 insert into venice_best_award(year, round, film_id, film_festival_id) values(2022, 79, 79, 4);
-
-insert into user(username, password) values('lana','1234');
-insert into review_academy(grade, gender, academy_award_id, user_id) values(1, 'F', 1, 1);
