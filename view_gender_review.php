@@ -3,9 +3,9 @@ header('Content-Type: text/html; charset=UTF-8');
 session_start();
 $host = 'localhost';
 $user = 'team13';
-$pw = 'team30';
+$pw = 'team13';
 $db_name = 'team13';
-$mysqli = new mysqli($host, $user, $pw, $db_name, '3307'); //db 연결
+$mysqli = new mysqli($host, $user, $pw, $db_name); //db 연결
 if(isset($_POST['search']))
 { 
     $film_name=$_POST['fname']; #영화이름
