@@ -34,6 +34,8 @@ else{
             WHERE director.name = '$dir' and director.id = film.director_id";
     $res1 = mysqli_query($mysqli, $sql1); // 선택한 감독의 영화를 찾는 쿼리 실행
 
+    $filmSalesSum = 0;
+
     if($res1){
         echo "<table border cols = 3\n";
         echo "<tr><td> 영화 이름 </td><td> 매출액 </td> <td> 수상기록 </td> \n";
@@ -49,6 +51,7 @@ else{
             $filmRow = mysqli_fetch_assoc($res2);
             $filmName = $filmRow['name'];   // 영화 이름
             $filmSales = $filmRow['sales']; // 영화의 매출액
+            $filmSalesSum += $filmSales;
 
             // 아카데미
             $sql3 = "SELECT academy_best_award.year, academy_best_award.round
@@ -63,8 +66,7 @@ else{
                 $res3Concat = $res3_year."년 ".$res3_round."회 아카데미 시상식 작품상";
 
                 if ($filmSales==0){ // 매출액이 0인 경우, '정보 없음' 출력
-                    $filmSales='정보 없음';
-                    echo "<tr><td>".$filmName."</td><td>".$filmSales."</td><td>".$res3Concat."</td></tr>";
+                    echo "<tr><td>".$filmName."</td><td> 정보 없음 </td><td>".$res3Concat."</td></tr>";
                 } else{
                     echo "<tr><td>".$filmName."</td><td>".$filmSales."$ </td><td>".$res3Concat."</td></tr>";
                 }
@@ -83,8 +85,7 @@ else{
                 $res4Concat = $res4_year."년 ".$res4_round."회 칸 영화제 황금종려상";
 
                 if ($filmSales==0){ // 매출액이 0인 경우, '정보 없음' 출력
-                    $filmSales='정보 없음';
-                    echo "<tr><td>".$filmName."</td><td>".$filmSales."</td><td>".$res4Concat."</td></tr>";
+                    echo "<tr><td>".$filmName."</td><td> 정보 없음 </td><td>".$res4Concat."</td></tr>";
                 } else{
                     echo "<tr><td>".$filmName."</td><td>".$filmSales."$ </td><td>".$res4Concat."</td></tr>";
                 }
@@ -104,7 +105,7 @@ else{
 
                 if ($filmSales==0){ // 매출액이 0인 경우, '정보 없음' 출력
                     $filmSales='정보 없음';
-                    echo "<tr><td>".$filmName."</td><td>".$filmSales."</td><td>".$res5Concat."</td></tr>";
+                    echo "<tr><td>".$filmName."</td><td> 정보 없음 </td><td>".$res5Concat."</td></tr>";
                 } else{
                     echo "<tr><td>".$filmName."</td><td>".$filmSales."$ </td><td>".$res5Concat."</td></tr>";
                 }
@@ -124,7 +125,7 @@ else{
 
                 if ($filmSales==0){ // 매출액이 0인 경우, '정보 없음' 출력
                     $filmSales='정보 없음';
-                    echo "<tr><td>".$filmName."</td><td>".$filmSales."</td><td>".$res6Concat."</td></tr>";
+                    echo "<tr><td>".$filmName."</td><td> 정보 없음 </td><td>".$res6Concat."</td></tr>";
                 } else{
                     echo "<tr><td>".$filmName."</td><td>".$filmSales."$ </td><td>".$res6Concat."</td></tr>";
                 }
@@ -133,7 +134,15 @@ else{
     
     }
 
+    $res7 = $mysqli -> query($sql1);
+    $res7Num = $res7->num_rows;
 
+    if($filmSalesSum==0){
+        echo "<tr><td> 합계: </td><td> 정보 없음 </td><td>".$res7Num."회 수상 </td></tr> \n";
+    }else{
+        echo "<tr><td> 합계: </td><td>".$filmSalesSum."$ </td><td>".$res7Num."회 수상 </td></tr> \n";
+    }
+    
     ?>
 </body>
 </html>
