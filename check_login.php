@@ -21,13 +21,13 @@
         $q = "INSERT INTO user (username, password) values ('$username', '$userpass')";
         $result = $mysqli->query($q);
 
-        // 결과가 존재하면 세션 생성
+        // if result of query exists, signup and login succeed at once
         if ($result != null) {
             $_SESSION['user'] = '$username';
             echo "<script>location.replace('index.php');</script>";
             exit;
         }
-        // 결과가 존재하지 않으면 회원가입 실패
+        // else, error popup and redirect to login page
         if($result == null){
             echo "<script>alert('Failed to sign up. Please try again.')</script>";
             echo "<script>location.replace('login.php');</script>";
@@ -40,13 +40,13 @@
         $result = $mysqli->query($q);
         $row = $result->fetch_array(MYSQLI_ASSOC);
 
-        // 결과가 존재하면 세션 생성
+        // if result of query not null, create login session
         if ($row != null) {
             $_SESSION['user'] = $row['id'];
             echo "<script>location.replace('index.php');</script>";
             exit;
         }
-        // 결과가 존재하지 않으면 로그인 실패
+        // else, error popup
         if($row == null){
             echo "<script>alert('Invalid username or password')</script>";
             echo "<script>location.replace('login.php');</script>";

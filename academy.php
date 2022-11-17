@@ -29,7 +29,7 @@ $db_name = 'team13';
     <table>
         <thead>
             <tr>
-            <form action="write_review.php" METHOD='post'>
+            <form action="write_review_academy.php" METHOD='post'>
                 <input type="hidden" name="choice" value="academy">
                 <input type="text" name="fname" placeholder="영화제목 입력">
                 <input type="number" name="rating" min="1" max="10" placeholder="10">
