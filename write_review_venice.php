@@ -28,7 +28,7 @@ else {
         }
 
         $query_2 = "SELECT id
-        FROM academy_best_award
+        FROM venice_best_award
         WHERE film_id = '$id_first'";
         $result_2 = $mysqli->query($query_2);
         if ($result_2) {
@@ -53,10 +53,10 @@ else {
             $review = "-";
         }
 
-        $q = "INSERT INTO review_academy (grade, gender, academy_award_id, user_id) values ('$grade', '$gen', '$id_final', '$userid')";
+        $q = "INSERT INTO review_venice (grade, gender, academy_award_id, user_id) values ('$grade', '$gen', '$id_final', '$userid')";
         $res = mysqli_query($mysqli, $q);
 
-        $qu = "SELECT * FROM review_academy WHERE user_id = '$userid'";
+        $qu = "SELECT * FROM review_venice WHERE user_id = '$userid'";
         $result = mysqli_query($mysqli, $qu);
 
 
