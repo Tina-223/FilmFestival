@@ -70,7 +70,7 @@ if($res1){
 
 
 if($award_name=='academy'){
-    $sql2="SELECT * FROM review_academy, user";
+    $sql2="SELECT * FROM review_academy";
     $res2= mysqli_query($mysqli,$sql2);
     if($res2){
         while($newArray = mysqli_fetch_array($res2,MYSQLI_ASSOC)){
@@ -78,7 +78,7 @@ if($award_name=='academy'){
         $grade2=$newArray['grade'];
         $userid=$newArray['user_id'];
             echo  "<tr><td>$film_name</td><td>".$gender2."</td><td>".$grade2."</td><td>".$userid."</td></tr>";         
-     }
+        }
     }
 }else{
     printf("mysqli_error($mysqli)");
