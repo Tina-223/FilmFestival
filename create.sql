@@ -142,3 +142,19 @@ alter table film add foreign key(director_id) references director(id) on delete 
 alter table film_hit add foreign key(film_id) references film(id) on delete cascade;
 
 alter table film_gender add foreign key(film_id) references film(id) on delete cascade;
+
+
+create index index_film_festival on film_festival(id);
+create index index_academy_best_award on academy_best_award(id);
+create index index_cannes_best_award on cannes_best_award(id);
+create index index_berlin_best_award on berlin_best_award(id);
+create index index_venice_best_award on venice_best_award(id);
+create index index_user on user(id);
+create index index_review_academy on review_academy(id);
+create index index_review_venice on review_venice(id);
+create index index_review_berlin on review_berlin(id);
+create index index_review_cannes on review_cannes(id);
+create index index_film on film(id);
+create index index_film_gender on film_gender(id);
+create index index_director on director(id);
+create index index_film_hit on film_hit(id);
