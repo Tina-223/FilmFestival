@@ -11,7 +11,7 @@
     <div class="wrapper">
         <section class="content">
             <div class="columns">
-                <main class="main">Films Based on Directors</main>
+                <main class="main" onclick="location.href='http://localhost:8080/team13/director_info.html'">Films Based on Directors</main>
                 <aside class="sidebar-first" onclick="location.href='http://localhost:8080/team13/select_awards.php'">Award-Winning Films</aside>
                 <aside class="sidebar-second" onclick="location.href='http://localhost:8080/team13/country_select.php'">Films Based on Countries</aside>
             </div>
