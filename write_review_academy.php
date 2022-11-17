@@ -53,11 +53,8 @@ else {
             $review = "-";
         }
 
-        $q = "INSERT INTO review_academy (grade, gender, academy_award_id, user_id) values ('$grade', '$gen', '$id_final', '$userid')";
+        $q = "INSERT INTO review_academy (grade, gender, academy_award_id, user_id) VALUES ('$grade', '$gen', '$id_final', '$userid')";
         $res = mysqli_query($mysqli, $q);
-
-        $qu = "SELECT * FROM review_academy WHERE user_id = '$userid'";
-        $result = mysqli_query($mysqli, $qu);
 
 
         echo "<".$film_name.">"."에 대한 리뷰가 등록되었습니다.</br>";
