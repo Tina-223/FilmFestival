@@ -19,14 +19,29 @@ else {
         $grade=$_POST['rating']; #평점
         $gen=$_POST['gender'];
 
-        $query_1 = "SELECT A.id
-        FROM academy_best_award A
-        JOIN film F ON A.film_id = F.id";
+        $query_1 = "SELECT id FROM film WHERE name = '$film_name'";
         $result_1 = $mysqli->query($query_1);
         if ($result_1) {
-            while($newarray_2 = mysqli_fetch_array($result_1, MYSQLI_ASSOC)){
+            while($newarray_1 = mysqli_fetch_array($result_1, MYSQLI_ASSOC)){
+                $id_first = $newarray_1['id'];
+            }
+        }
+
+        $query_2 = "SELECT id
+        FROM academy_best_award
+        WHERE film_id = '$id_first'";
+        $result_2 = $mysqli->query($query_2);
+        if ($result_2) {
+            while($newarray_2 = mysqli_fetch_array($result_2, MYSQLI_ASSOC)){
                 $id_final = $newarray_2['id'];				
-                echo $id_final;
+            }
+        }
+
+        $query_3 = "SELECT username FROM user WHERE id = '$userid'";
+        $result_3 = $mysqli->query($query_3);
+        if ($result_3) {
+            while ($newarray_3 = mysqli_fetch_array($result_3, MYSQLI_ASSOC)) {
+                $username = $newarray_3['username'];
             }
         }
 
@@ -44,22 +59,9 @@ else {
         $qu = "SELECT * FROM review_academy WHERE user_id = '$userid'";
         $result = mysqli_query($mysqli, $qu);
 
-        // insert문 실행 시
-        if ($res) {
-            echo "<table border cols = 2>\n";
-            echo "<tr><td> ratings </td></tr>\n";
-            while($newarray = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-                $r_grade = $newarray['grade'];				
-                echo "<tr><td>".$r_grade."</td></tr>\n";
-            }
-        }
-        else {
-            printf("Could not retrieve records: %s\n", mysqli_error($mysqli));
-        }
-
 
         echo "<".$film_name.">"."에 대한 리뷰가 등록되었습니다.</br>";
-        echo "작성자: ".$userid.", 평점 :".$grade;
+        echo "작성자: ".$username."   평점 :".$grade;
     }
 }
 
