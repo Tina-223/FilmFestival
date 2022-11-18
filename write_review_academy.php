@@ -59,7 +59,8 @@ else {
             $q = "INSERT INTO review_academy (grade, gender, academy_award_id, user_id) VALUES ('$grade', '$gen', '$id_final', '$userid')";
             $res = mysqli_query($mysqli, $q);
 
-
+            mysqli_commit($mysqli);
+            
             echo "<".$film_name.">"."에 대한 리뷰가 등록되었습니다.</br>";
             echo "작성자: ".$username."   평점 :".$grade;
         } catch (mysqli_sql_exception) {
